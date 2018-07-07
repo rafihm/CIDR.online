@@ -169,7 +169,7 @@ var enteredValue = document.getElementById('inputCIDR').value;
 var myObj = '';
 if(ValidateIPaddress(enteredValue))
     {
-        var phpURL = "http://cidr.online/cidroutput.php?inCIDR=" + enteredValue;
+        var phpURL = "https://cidr.online/cidroutput.php?inCIDR=" + enteredValue;
 	    var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
