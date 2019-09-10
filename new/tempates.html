@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    
+    
+    
+    <style>
+      body {
+        padding-top: 54px;
+      }
+      @media (min-width: 992px) {
+        body {
+          padding-top: 56px;
+        }
+      }
+
+      #search-bar{
+      width: 50%;
+      margin: 0 auto;
+          }
+    #output{
+      width: 50%;
+      margin: 0 auto;
+      }
+
+    .table-fixed {
+    table-layout: fixed;
+    overflow: hidden;
+}
+.primary-text {
+  color: #4285F4; }
+
+.danger-text {
+  color: #ff3547; }
+
+.warning-text {
+  color: #FF8800; }
+
+.success-text {
+  color: #00C851; }
+
+.info-text {
+  color: #33b5e5; }
+
+.default-text {
+  color: #2BBBAD; }
+
+.secondary-text {
+  color: #aa66cc; }
+        
+        
+        
+        
+        .input-group .form-control.added-padding-2 {
+    padding-top: 4px;
+}
+.input-group .form-control.added-padding-3 {
+    padding-top: 3px;
+}
+        
+        
+        
+        
+    </style>
+
+        <script
+                src="https://code.jquery.com/jquery-1.12.4.js"
+                  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+                  crossorigin="anonymous"></script>
+
+
+<script>
+
+function go() {
+
+var enteredValue = document.getElementById('inputCIDR').value;
+
+$('#ipOutput').load('/cidroutput.php?inCIDR=' + enteredValue);
+
+}
+</script>
+    
+<script>
+    //submits the click when enter pressed
+    $(function(){
+  $('#search-bar').keypress(function(e){
+    if(e.which == 13) {
+        document.getElementById("hitme").click();
+    }
+  })
+})
+    
+</script>    
+
+    
+    
+    
+    
+</head>
+
+    
+    
+    
+<body>
+
+    <!-- Start your project here-->
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">IPv4 CIDR Calculator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md- text-center col-md-offset-8"></div>
+        <div>
+          <h1 class="mt-5 text-center">Advanced IPv4 Subnet Or CIDR Calculator</h1>
+          <p class="lead text-center">This Subnet/CIDR calculator allows you to enter a IPv4 CIDR range and calculates IP addresses, Network Size, Subnet Mask, Min and Max Host etc. </p><br>
+        </div>
+          
+          
+    <!-- Grid column -->
+    <div class="col-md-4" id="search-bar">
+
+        <div class="md-form input-group">
+            <input type="search" class="form-control added-padding-3" id="inputCIDR" name="inCIDR" placeholder="Enter IPv4 CIDR">
+            <span class="input-group-btn">
+                <button class="btn btn-primary aqua-gradient my-0" type="button" id="hitme" onclick="go()">Hit Me</button>
+            </span>
+        </div>
+
+    </div>
+    <!-- Grid column -->
+         
+
+
+
+
+  <div id="ipOutput">
+
+
+      
+          <div class="card">
+      <span class="border border-info">  <h2 class="card-header-title text-center" style="padding-top: 15px;">Subnet Info</h2></span>
+    <div class="card-body">
+        <!--Table-->
+        <table class="table table-hover table-responsive-md table-fixed">
+            <!--Table head-->
+            <thead>
+                <tr>
+                    <th>1.1.1.1/1</th>
+                    <th>Quads</th>
+                    <th>Hex</th>
+                    <th>Binary</th>
+                </tr>
+            </thead>
+            <!--Table head-->
+
+            <!--Table body-->
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Jerry</td>
+                    <td>Horwitz</td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Janis</td>
+                    <td>Joplin</td>
+                    <td>Poland</td>
+                </tr>
+            </tbody>
+            <!--Table body-->
+
+        </table>
+        <!--Table-->
+
+    </div>
+</div>
+      
+            <div style="margin-top:20px"></div>
+
+      <div class="card .col-md-offset-1">
+      <span class="border border-info">  <h2 class="card-header-title text-center" style="padding-top: 15px;">CIDR Info</h2></span>
+    <div class="card-body">
+        <!--Table-->
+        <table class="table table-hover table-responsive-md table-fixed">
+            <!--Table head-->
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <!--Table head-->
+
+            <!--Table body-->
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Jerry</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Janis</td>
+                </tr>
+            </tbody>
+            <!--Table body-->
+
+        </table>
+        <!--Table-->
+
+    </div>
+</div>        
+          
+ 
+      <div class="card">
+      <span class="border border-danger">  <h2 class="danger-text card-header-title text-center" style="padding-top: 15px;">Oooooops!</h2></span>
+    <div class="card-body">
+        <p class="danger-text text-center">Do you really think you have entered valid CIDR range ?</p><br>
+        <p class="primary-text text-center">Enter the CIDR in the Below Format</p>
+        <p class="primary-text text-center">172.31.13.13/20</p><br>
+        
+        
+    </div>
+</div>
+      
+      
+      
+      
+      
+          
+</div>
+          
+          
+          
+          
+        </div>
+      </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- /Start your project here-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>

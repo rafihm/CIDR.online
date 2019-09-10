@@ -3,29 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Advanced CIDR Calculator</title>
-	
-	
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121314542-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-121314542-2');
-</script>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-2305790620779492",
-          enable_page_level_ads: true
-     });
-</script>
-	
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -53,14 +33,16 @@
       margin: 0 auto;
           }
     #ipOutput1{
-      width: 80%;
-      margin: 0 auto;
+      width: calc(80vh - 15px);
+          margin-right: 50px;
+    margin-left: 80px;
                          word-break:break-all;
          word-wrap: break-word;
       }
     #ipOutput2{
-      width: 60%;
-      margin: 0 auto;
+      width: calc(80vh - 15px);
+          margin-right: 50px;
+    margin-left: 80px;
                          word-break:break-all;
          word-wrap: break-word;
       }
@@ -137,13 +119,13 @@ function displayOutput(myObj)
         tableHead1 = '<thead><tr><th>' + myObj.ip_address_with_network_size + '</th><th>Quads</th><th>Hex</th><th>Binary</th></tr></thead>';
         tableValue1 = '<!--Table body--><tbody>\
                 <tr><th scope="row">IP Adress</th><td>' + myObj.ip_address.quads + '</td><td>' + myObj.ip_address.hex + '</td><td >' + myObj.ip_address.binary + '</td></tr>\
-                <tr><th scope="row">Subnet Mask</th><td>' + myObj.subnet_mask.quads + '</td><td>' + myObj.subnet_mask.hex + '</td><td>' + myObj.subnet_mask.binary + '</td></tr>\
-                <tr><th scope="row">Network Portion</th><td>' + myObj.network_portion.quads + '</td><td>' + myObj.network_portion.hex + '</td><td>' + myObj.network_portion.binary + '</td></tr>\
-                <tr><th scope="row">Host Portion</th><td>' + myObj.host_portion.quads + '</td><td>' + myObj.host_portion.hex + '</td><td>' + myObj.host_portion.binary + '</td></tr>\
+                <tr><th scope="row">Subnet Mask</th><td>' + myObj.subnet_mask.quads + '</td><td>' + myObj.subnet_mask.quads + '</td><td>' + myObj.subnet_mask.binary + '</td></tr>\
+                <tr><th scope="row">Network Portion</th><td>' + myObj.network_portion.quads + '</td><td>' + myObj.network_portion.quads + '</td><td>' + myObj.network_portion.binary + '</td></tr>\
+                <tr><th scope="row">Host Portion</th><td>' + myObj.host_portion.quads + '</td><td>' + myObj.host_portion.quads + '</td><td>' + myObj.host_portion.binary + '</td></tr>\
             </tbody><!--Table body--></table><!--Table--></div></div>';
         
         cardHeader2 = '<div style="margin-top:20px"></div><div class="card"><span class="border border-info">  <h2 class="card-header-title text-center" style="padding-top: 15px;">IP Info</h2></span><div class="card-body">\
-        <!--Table--><table class="table table-hover table-responsive-md table-fixed text-left"><col width="80px" /><col width="80px" /><!--Table head-->'
+        <!--Table--><table class="table table-hover table-responsive-md table-fixed text-center"><col width="calc(50vh - 15px);" /><col width="calc(50vh - 15px);" /><!--Table head-->'
         tableHead2 = '<thead><tr><th>Key</th><th>Value</th></tr></thead>'
         tableValue2 = '<!--Table body--><tbody>\
                 <tr><th scope="row">Network Size</th><td>' + myObj.network_size + '</td></tr>\
@@ -175,7 +157,7 @@ var enteredValue = document.getElementById('inputCIDR').value;
 var myObj = '';
 if(ValidateIPaddress(enteredValue))
     {
-        var phpURL = "https://cidr.online/cidroutput.php?inCIDR=" + enteredValue;
+        var phpURL = "http://cidr.online/cidroutput.php?inCIDR=" + enteredValue;
 	    var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
